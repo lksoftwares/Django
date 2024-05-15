@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>userForm</title>
+</head>
+
+<body>
+
+  <form method="post" action="{% url 'submitForm' %}">
+    {% csrf_token %}
+    <!-- Name:  <input type="text"name="name"/>
+      Age:<input type="number" name="age"/> -->
+{{form}}
+    <!-- n1: <input type="text" name="a" />
+    n2: <input type="text" name="b" /> -->
+    <!-- <button type="button">Submit</button> -->
+
+    output:<input type="submit" value="{{ output }}" />
+  </form>
+</body>
+
+</html>
+
+{% endblock %}

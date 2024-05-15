@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        .main {
+            color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="main"> {{homeData}}
+    </h1>
+    {% for item in subjectList%}
+    <div>{{item}}</div>
+    {% endfor %}
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>PhoneNo.</th>
+        </tr>
+        {% for student in studDetails %}
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.PhoneNo}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    {% if numbers|length > 0 %}
+    {% for n in numbers %}
+    <div>{{n}}</div>
+    {%endfor%}
+
+    {% else %}
+    <h3>NO Data Found </h3>
+    {% endif%}
+</body>
+
+</html>

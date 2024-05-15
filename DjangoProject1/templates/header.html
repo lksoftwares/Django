@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/static/CSS/style.css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="nav-item">
+        <!-- <a class="text" href="/">Home</a>
+        <a class="text" href="/about">About</a>
+        <a class="text" href="/contact">Contact</a> -->
+        <a class=" {% if request.path == '/' %} active {% endif %} " href="/">Home</a>
+        {%url 'about' as url%}
+        <a class="{{ url }}" href="/about">About</a>
+        <a class="{% if request.path == '/' %} active {% endif %}" href="/contact">Contact</a>
+
+
+    </nav>
+</body>
+
+</html>
