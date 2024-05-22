@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{m}}
+    <form  method="post" action="{% url 'contact' %}">
+       
+        {% csrf_token %}
+        Name:<input type="text" name="name" /> <br><br>
+        Contact No.: <input type="number"  name="contact"/><br><br>
+        email:<input type="email"  name="email"/><br><br>
+        Address:<input type="text" name="Address"/><br><br>
+        <button type="submit">submit</button>
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST">
+     
+        {% if error %}
+        <div   class="alert alert-danger" role="alert"> Plz enter a value </div>{% endif %}
+        {% csrf_token %}
+        Subject 1 : <input type="text" name="s1"/>
+        
+        Subject 2 : <input type="text" name="s2" />
+        Subject 3 : <input type="text" name="s3" />
+        Subject 4 : <input type="text" name="s4" />
+        Subject 5 : <input type="text" name="s5" />
+        <button type="submit">Calculate</button>
+     
+        Total Sum: <input type="text" value="{{ sum }}" readonly />
+        Percentage: <input type="text" value="{{ per }}" readonly />
+
+        <!-- Total Sum: <input type="text" value="{{ sum }}" readonly/> -->
+
+
+    </form>
+    
+</body>
+
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        Subject 1 : <input type="text" name="s1" />
+        Subject 2 : <input type="text" name="s2" />
+        Subject 3 : <input type="text" name="s3" />
+        Subject 4 : <input type="text" name="s4" />
+        Subject 5 : <input type="text" name="s5" />
+        <button type="submit">Calculate</button>
+        Total Sum: <input type="text" value="{{ sum }}" readonly />
+    </form>
+</body>
+</html>  -->

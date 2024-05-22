@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from DjangoProject1 import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
@@ -31,13 +32,13 @@ urlpatterns = [
     path('submitForm/', views.submitForm,name="submitForm"),
     path('calculator/', views.calculator),
     path('evenOdd/', views.EvenOdd),
-
-
-
-
-
-     
-
+    # path('studentmarks', views.StudentMarks),
+    path('studentmarks', views.StudentMarks, name='studentmarks'),
+    path('modelClassData', views.modelClassData, name='modelClassData'),
+     path('newsdetail/<id>', views.newdetails, name='newsdetail'),
+          path('contact/', views.ContactUS, name='contact'),
 
 
 ]
+if settings.DEBUG:
+      urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
